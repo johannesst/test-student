@@ -1,0 +1,21 @@
+$def with (form,result)
+<html>
+<head>
+<title>LDAP Search TU BS</title>
+</head>
+<body>
+<form name="main" method="post"> 
+$:form.render()
+</form>
+</body>
+<table>
+<tr>
+<th>y-nr</th><th>Name</th><th>Email</th><th>Institut/Status</th>
+</tr>
+$for i in  result:
+    <tr><td> $:i[0][1]['uid'][0]</td>
+    <td> $:i[0][1]['cn'][0]</td>
+    <td> $:i[0][1]['mail'][0]</td>
+    <td> $:i[0][1]['ou'][0]</td>
+    </tr>
+</html>
